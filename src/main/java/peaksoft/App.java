@@ -10,5 +10,16 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+
+        Cat cat = applicationContext.getBean("cat", Cat.class);
+        System.out.println("Cat: " + cat.getName());
+        System.out.println("Cat: " + cat.getAge());
+
+        Cat cat1 = applicationContext.getBean("cat", Cat.class);
+        System.out.println("Cat1: " + cat1.getName());
+        System.out.println("Cat1: " + cat1.getAge());
+
+        Boolean comparison = cat.equals(cat1);
+        System.out.println("comparison: " + comparison);
     }
 }
